@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConectaNet - Módulos</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=keyboard_control_key" />
+  <script>
+    (function (d) {
+      var s = d.createElement("script");
+      s.setAttribute("data-widget-layout", "full");
+      s.setAttribute("data-account", "URCfNynVSi");
+      s.setAttribute("src", "https://cdn.userway.org/widget.js");
+      (d.body || d.head).appendChild(s);
+    })(document);
+  </script>
+
+</head>
+
+<body>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+  <header class="main-header">
+    <nav class="nav-header">
+      <a class="logo" href="/">
+        <img src="img/logo_conectafacil.png" alt="Logo ConectaFácil" class="logo-img">
+      </a>
+      <div class="mobile-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <ul class="nav-list">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="modulos.html">Módulos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="modulos-container">
+    <div id="page-title">
+      <h2>Módulos dos Cursos</h2>
+    </div>
+    <nav class="nav-bar">
+      <input type="text" placeholder="Pesquisar" id="search-bar">
+
+      <ul id="modulos-list">
+        <li class="modulos-item">
+          <a href="modulo.html?id=1">Módulo 1 - Acesso a Aparelhos Eletrônicos</a>
+        </li>
+        <li class="modulos-item">
+          <a href="modulo.html?id=2">Módulo 2 - Navegação Básica</a>
+        </li>
+        <li class="modulos-item">
+          <a href="modulo.html?id=3">Módulo 3 - Navegação Segura</a>
+        </li>
+        <li class="modulos-item">
+          <a href="modulo.html?id=4">Módulo 4 - Mídias Sociais</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="card-container">
+      <a href="acessoDeAparelhosEletronicos.html" class="card-link text-animation">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/modulo1.png" alt="Imagem do módulo Acesso a Aparelhos Eletrônicos">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Acesso a Aparelhos Eletrônicos</h3>
+          </div>
+          <div style="width: 100%;">
+            <button class="acesso-modulo">
+              Acessar Módulo
+            </button>
+          </div>
+        </div>
+      </a>
+
+      <a href="navegaçãoBasica.html" class="card-link text-animation">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/modulo2.png" alt="Imagem do módulo Navegação Básica">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Navegação Básica</h3>
+          </div>
+          <div style="width: 100%;">
+            <button class="acesso-modulo">
+              Acessar Módulo
+            </button>
+          </div>
+        </div>
+      </a>
+
+      <a href="navegaçãoSegura.html" class="card-link text-animation">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/modulo3.png" alt="Imagem do módulo Navegação Segura">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Navegação Segura</h3>
+          </div>
+          <div style="width: 100%;">
+            <button class="acesso-modulo">
+              Acessar Módulo
+            </button>
+          </div>
+        </div>
+      </a>
+
+      <a href="midiasSociais.html" class="card-link text-animation">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/modulo4.png" alt="Imagem do módulo Mídias Sociais">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Mídias Sociais</h3>
+          </div>
+          <div style="width: 100%;">
+            <button class="acesso-modulo">
+              Acessar Módulo
+            </button>
+          </div>
+        </div>
+    </div>
+    </a>
+
+    <a href="index.html" class="inicio-button">Voltar ao início</a>
+  </main>
+
+  <a href="#page-title" class="back-to-top" onclick="scrollToTop()">
+    <span class="material-symbols-outlined">
+      keyboard_control_key
+    </span>
+  </a>
+
+  <footer>
+    <div class="container">
+      <p>Contato </p>
+      <p> cosaicsite@gmail.com </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <script>
+    let fonte = 100;
+
+  </script>
+</body>
+
+</html>
