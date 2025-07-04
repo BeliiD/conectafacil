@@ -596,6 +596,33 @@ footer {
     width: 300px;
     height: 350px;
   }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    top: 35%; /* desce um pouco mais os botões */
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 3;
+  }
+
+  .carousel-control-prev {
+    left: -10px;
+  }
+
+  .carousel-control-next {
+    right: -10px;
+  }
+
+  /* Garantir que o vídeo ocupe toda a largura possível */
+  .carousel iframe {
+    width: 100% !important;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+  
 }
 
 .nav-list.active {
