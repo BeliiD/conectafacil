@@ -589,7 +589,11 @@ footer {
   }
 
   .videos iframe {
-    height: 300px;
+    width: 100% !important;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    min-height: 240px;
+    max-height: 100vh;
   }
 
   .conteudo-pdf embed {
@@ -621,6 +625,10 @@ footer {
     width: 100% !important;
     height: auto;
     aspect-ratio: 16 / 9;
+  }
+
+  .videos {
+    margin-bottom: 60px; /* espaço extra abaixo do vídeo */
   }
 
 }
@@ -841,4 +849,8 @@ footer {
     color: white;
 }
 
-
+div[vw-access-button] {
+  bottom: 100px !important; /* sobe o botão */
+  right: 20px !important; /* encosta mais à direita */
+  z-index: 9999 !important;
+}
