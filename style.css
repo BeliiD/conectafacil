@@ -218,6 +218,9 @@ footer {
   text-align: center;
   font-size: 1.5em;
   font-weight: 700;
+  position: static;
+  width: 100%;
+  bottom: 0;
 }
 
 .container {
