@@ -11,6 +11,9 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .container {
