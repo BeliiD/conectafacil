@@ -585,11 +585,11 @@ footer {
   }
 
   .videos {
-    width: 300px;
+    width: 350px;
   }
 
   .videos iframe {
-    height: 200px;
+    height: 300px;
   }
 
   .conteudo-pdf embed {
@@ -622,7 +622,7 @@ footer {
     height: auto;
     aspect-ratio: 16 / 9;
   }
-  
+
 }
 
 .nav-list.active {
