@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+:root {
+  --cor1: #104a55;
+  --cor2: #024248;
+  --cor3: #339795;
+  --cor4: #071d41;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -116,7 +123,22 @@ nav a {
 .nav-list a {
   text-decoration: none;
   color: #555;
-  font-weight: 700;
+  /* font-weight: 700; */
+}
+
+#login-button {
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px 10px;
+  font-size: 20px;
+  color: #fff;
+  background-color: var(--cor3);
+  transition: 0.3s;
+}
+
+#login-button:hover {
+  color: #fff;
+  background-color: var(--cor1);
 }
 
 .mobile-menu {
@@ -198,7 +220,7 @@ main {
   /* Leve crescimento */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   /* Sombra ao redor */
-  background-color: #006666;
+  background-color: var(--cor3);
   color: white;
   border-color: #004d4d;
 }
@@ -423,7 +445,7 @@ footer {
   margin-top: 40px;
 }
 
-.text-animation{
+.text-animation {
   position: relative;
   animation-name: example;
   animation-duration: 2s;
@@ -431,8 +453,15 @@ footer {
 }
 
 @keyframes example {
-  0%   {opacity: 0; top:100px;}
-  100% {opacity: 1;top:0px;}
+  0% {
+    opacity: 0;
+    top: 100px;
+  }
+
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
 }
 
 .back-to-top {
@@ -603,7 +632,8 @@ footer {
 
   .carousel-control-prev,
   .carousel-control-next {
-    top: 45%; /* desce um pouco mais os botões */
+    top: 45%;
+    /* desce um pouco mais os botões */
     transform: translateY(-50%);
     width: 24px;
     height: 24px;
@@ -628,7 +658,8 @@ footer {
   }
 
   .videos {
-    margin-bottom: 60px; /* espaço extra abaixo do vídeo */
+    margin-bottom: 60px;
+    /* espaço extra abaixo do vídeo */
   }
 
 }
@@ -666,7 +697,7 @@ footer {
 .download-button {
   margin-top: 500px;
   padding: 10px 20px;
-  border: 2px solid #006666;
+  border: 2px solid var(--cor3);
   border-radius: 50px;
   background-color: white;
   color: #000000;
@@ -685,7 +716,7 @@ footer {
   /* Leve crescimento */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   /* Sombra ao redor */
-  background-color: #006666;
+  background-color: var(--cor3);
   color: white;
   border-color: #004d4d;
 }
@@ -699,7 +730,7 @@ footer {
   /* Ajusta a largura ao conteúdo do botão */
   /* Mantenha o resto do seu estilo original */
   padding: 10px 20px;
-  border: 2px solid #006666;
+  border: 2px solid var(--cor3);
   border-radius: 50px;
   background-color: white;
   color: #000000;
@@ -716,7 +747,7 @@ footer {
   /* Leve crescimento */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   /* Sombra ao redor */
-  background-color: #006666;
+  background-color: var(--cor3);
   color: white;
   border-color: #004d4d;
 }
@@ -771,7 +802,7 @@ footer {
   /* Ajusta a largura ao conteúdo do botão */
   /* Mantenha o resto do seu estilo original */
   padding: 10px 20px;
-  border: 2px solid #006666;
+  border: 2px solid var(--cor3);
   border-radius: 50px;
   background-color: white;
   color: #000000;
@@ -788,7 +819,7 @@ footer {
   /* Leve crescimento */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   /* Sombra ao redor */
-  background-color: #006666;
+  background-color: var(--cor3);
   color: white;
   border-color: #004d4d;
 }
@@ -811,7 +842,7 @@ footer {
 }
 
 .carousel button {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   font-size: 24px;
@@ -822,35 +853,42 @@ footer {
   transform: translateY(-50%);
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
 
 .feedback-button-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 }
 
 .feedback-button {
-    padding: 12px 24px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    border: 2px solid #004D47;
-    background-color: white;
-    color: #004D47;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  padding: 12px 24px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid var(--cor2);
+  background-color: white;
+  color: var(--cor2);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .feedback-button:hover {
-    background-color: #004D47;
-    color: white;
+  background-color: var(--cor1);
+  color: white;
 }
 
 div[vw-access-button] {
-  bottom: 100px !important; /* sobe o botão */
-  right: 20px !important; /* encosta mais à direita */
+  bottom: 100px !important;
+  /* sobe o botão */
+  right: 20px !important;
+  /* encosta mais à direita */
   z-index: 9999 !important;
 }
