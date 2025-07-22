@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro</title>
+</head>
+<body>
+  <h2>Cadastro</h2>
+  <form id="formCadastro">
+    <input type="text" id="nome" placeholder="Nome completo" required><br>
+    <input type="email" id="email" placeholder="Email" required><br>
+    <input type="password" id="senha" placeholder="Senha" required><br>
+    <input type="date" id="nascimento" required><br>
+    <select id="formacao" required>
+      <option disabled selected value="">Formação Acadêmica</option>
+      <option>Ensino Fundamental Incompleto</option>
+      <option>Ensino Fundamental Completo</option>
+      <option>Ensino Médio Incompleto</option>
+      <option>Ensino Médio Completo</option>
+      <option>Ensino Superior Incompleto</option>
+      <option>Ensino Superior Completo</option>
+    </select><br>
+    <button type="submit">Cadastrar</button>
+  </form>
+
+<!-- Firebase SDK compatível -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+<script src="firebase.js"></script>
+
+  <script>
+    document.getElementById('formCadastro').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('senha').value;
+      const nascimento = document.getElementById('nascimento').value;
+      const formacao = document.getElementById('formacao').value;
+
+      try {
+        const userCred = await auth.createUserWithEmailAndPassword(email, senha);
+        await db.collection("usuarios").doc(userCred.user.uid).set({
+          nome, email, nascimento, formacao
+        });
+        alert("Cadastro realizado com sucesso!");
+        window.location.href = "index.html";
+      } catch (error) {
+        alert("Erro: " + error.message);
+      }
+    });
+  </script>
+</body>
+</html>
