@@ -1,150 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ConectaNet - Bem-vindo</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
-    <script>
-        (function (d) {
-            var s = d.createElement("script");
-            s.setAttribute("data-widget-layout", "full");
-            s.setAttribute("data-account", "URCfNynVSi");
-            s.setAttribute("src", "https://cdn.userway.org/widget.js");
-            (d.body || d.head).appendChild(s);
-        })(document);
-    </script>
-
+  <meta charset="UTF-8">
+  <title>Login</title>
 </head>
-
 <body>
+  <h2>Login</h2>
+  <form id="formLogin">
+    <input type="email" id="email" placeholder="Email" required><br>
+    <input type="password" id="senha" placeholder="Senha" required><br>
+    <button type="submit">Entrar</button>
+  </form>
 
-  <!-- Firebase SDK compatível -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
-    <script src="firebase.js"></script>
-    
-    <script>
-        auth.onAuthStateChanged(user => {
-            if (!user) {
-                window.location.href = "login.html"; // redireciona se não estiver logado
-            }
-        });
-    </script>
+<!-- Firebase SDK compatível -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+<script src="firebase.js"></script>
 
+  <script>
+    document.getElementById('formLogin').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('senha').value;
 
-    <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
-        </div>
-    </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
-
-    <header class="main-header">
-        <nav class="nav-header">
-            <a class="logo" href="/">
-                <img src="img/logo_conectafacil.png" alt="Logo ConectaFácil" class="logo-img">
-            </a>
-            <div class="mobile-menu" role="button" tabindex="0" aria-label="Abrir ou fechar menu">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-            <ul class="nav-list">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="modulos.html">Módulos</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="container">
-            <section class="welcome-section">
-                <h2>Seja bem vindo ao ConectaFácil!</h2>
-                <div class="content-wrapper text-animation">
-                    <div class="text-content">
-                        <h3 class="text-animation">Quem somos?</h3>
-                        <p>
-                            Somos um time de estudantes das áreas da administração, ciência da computação,
-                            pedagogia, letras, ensino médio integrado com ensino técnico e engenharia focados em um projeto de Iniciação 
-                            Científica. Nossa atual missão? Diminuir a lacuna digital que afeta comunidades 
-                            vulneráveis. Percebemos que o letramento digital é uma ferramenta fundamental no 
-                            mundo de hoje, e é por isso que estamos construindo uma plataforma dedicada a
-                            pessoas com pouco ou nenhum acesso à tecnologia e à internet.
-                        </p>
-                        <p>
-                            Nosso trabalho prático se materializa em um site repleto de minicursos e atividades, 
-                            todos desenhados para serem simples e fáceis de usar. Acreditamos que o 
-                            conhecimento digital pode abrir portas e gerar novas oportunidades. Estamos 
-                            dedicados a criar um ambiente de aprendizado acolhedor e acessível, provando que a 
-                            tecnologia pode, e deve, ser para todos.
-                            
-            
-                        </p>
-                    </div>
-                    <div class="carousel">
-    <button class="prev" onclick="prevSlide()">❮</button>
-    <img id="carousel-img" src="img/img1.png" alt="Guia de uso">
-    <button class="next" onclick="nextSlide()">❯</button>
-</div>
-</div> <!-- Fim de content-wrapper -->
-
-<!-- Mova o botão para cá, abaixo do guia -->
-<div class="feedback-button-container">
-    <button class="feedback-button" onclick="window.open('https://forms.gle/r5MW9Z8BumHgSXeN6', '_blank')">
-        Deixe sua opinião sobre o site
-    </button>
-</div>
-
-                </div>
-            </section>
-
-        </div>
-
-        <button class="menu-button" onclick="window.location.href='modulos.html'">
-            Acessar nossos cursos
-        </button>
-
-    <style>
-        html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        }
-
-        body {
-        display: flex;
-        flex-direction: column;
-        }
-
-        main {
-        flex-grow: 1;
-        }
-    </style>
-        
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>Contato </p>
-            <p> cosaicsite@gmail.com </p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-
+      try {
+        await auth.signInWithEmailAndPassword(email, senha);
+        window.location.href = "index.html";
+      } catch (error) {
+        alert("Erro: " + error.message);
+      }
+    });
+  </script>
 </body>
-
 </html>
