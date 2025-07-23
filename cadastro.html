@@ -3,25 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Cadastro</title>
+  <link rel="stylesheet" href="style-cadastro.css">
 </head>
 <body>
-  <h2>Cadastro</h2>
-  <form id="formCadastro">
-    <input type="text" id="nome" placeholder="Nome completo" required><br>
-    <input type="email" id="email" placeholder="Email" required><br>
-    <input type="password" id="senha" placeholder="Senha" required><br>
-    <input type="date" id="nascimento" required><br>
-    <select id="formacao" required>
-      <option disabled selected value="">Formação Acadêmica</option>
-      <option>Ensino Fundamental Incompleto</option>
-      <option>Ensino Fundamental Completo</option>
-      <option>Ensino Médio Incompleto</option>
-      <option>Ensino Médio Completo</option>
-      <option>Ensino Superior Incompleto</option>
-      <option>Ensino Superior Completo</option>
-    </select><br>
-    <button type="submit">Cadastrar</button>
-  </form>
+  <div class="container">
+    <h2>Cadastro</h2>
+    <form id="formCadastro">
+      <input type="text" id="nome" placeholder="Nome completo" required><br>
+      <input type="email" id="email" placeholder="Email" required><br>
+      <input type="password" id="senha" placeholder="Senha" required><br>
+      <input type="date" id="nascimento" required><br>
+      <select id="formacao" required>
+        <option disabled selected value="">Formação Acadêmica</option>
+        <option>Ensino Fundamental Incompleto</option>
+        <option>Ensino Fundamental Completo</option>
+        <option>Ensino Médio Incompleto</option>
+        <option>Ensino Médio Completo</option>
+        <option>Ensino Superior Incompleto</option>
+        <option>Ensino Superior Completo</option>
+      </select><br>
+      <button type="submit">Cadastrar</button>
+    </form>
+  </div>
+
 
 <!-- Firebase SDK compatível -->
 <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
