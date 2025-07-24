@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <title>Cadastro</title>
   <link rel="stylesheet" href="style-cadastro.css">
 </head>
+
 <body>
   <div class="container">
     <h2>Cadastro</h2>
@@ -27,11 +29,11 @@
   </div>
 
 
-<!-- Firebase SDK compatível -->
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
-<script src="firebase.js"></script>
+  <!-- Firebase SDK compatível -->\
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  <script src="firebase.js"></script>
 
   <script>
     document.getElementById('formCadastro').addEventListener('submit', async (e) => {
@@ -47,6 +49,15 @@
         await db.collection("usuarios").doc(userCred.user.uid).set({
           nome, email, nascimento, formacao
         });
+        await db.collection("usuarios")
+          .doc(userCred.user.uid)
+          .collection("progresso")
+          .doc("curso1")
+          .set({
+            status: "em andamento",
+            porcentagem: 40,
+            ultimaAula: "Aula 3 - Introdução ao JS"
+          });
         alert("Cadastro realizado com sucesso!");
         window.location.href = "index.html";
       } catch (error) {
@@ -55,4 +66,5 @@
     });
   </script>
 </body>
+
 </html>

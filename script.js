@@ -1,68 +1,68 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const vlibrasButton = document.querySelector('.vlibras-button');
+  const vlibrasButton = document.querySelector('.vlibras-button');
 
-    if (vlibrasButton) {
+  if (vlibrasButton) {
 
-        vlibrasButton.addEventListener('click', () => {
+    vlibrasButton.addEventListener('click', () => {
 
-            alert('O botão Vlibras foi clicado! Aqui você poderia integrar a funcionalidade.');
-        });
+      alert('O botão Vlibras foi clicado! Aqui você poderia integrar a funcionalidade.');
+    });
 
-    }
+  }
 
 });
 
 class MobileNavbar {
-    constructor(mobileMenu, navList, navLinks) {
-        this.mobileMenu = document.querySelector(mobileMenu);
-        this.navList = document.querySelector(navList);
-        this.navLinks = document.querySelectorAll(navLinks);
-        this.activeClass = "active";
+  constructor(mobileMenu, navList, navLinks) {
+    this.mobileMenu = document.querySelector(mobileMenu);
+    this.navList = document.querySelector(navList);
+    this.navLinks = document.querySelectorAll(navLinks);
+    this.activeClass = "active";
 
-        this.handleClick = this.handleClick.bind(this);
-        this.handleKeydown = this.handleKeydown.bind(this);
-    }
+    this.handleClick = this.handleClick.bind(this);
+    this.handleKeydown = this.handleKeydown.bind(this);
+  }
 
-    animateLinks() {
-        this.navLinks.forEach((link, index) => {
-            link.style.animation
-                ? (link.style.animation = "")
-                : (link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3
-                    }s`);
-        });
-    }
+  animateLinks() {
+    this.navLinks.forEach((link, index) => {
+      link.style.animation
+        ? (link.style.animation = "")
+        : (link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3
+          }s`);
+    });
+  }
 
-    handleClick() {
-        this.navList.classList.toggle(this.activeClass);
-        this.mobileMenu.classList.toggle(this.activeClass);
-        this.animateLinks();
-    }
+  handleClick() {
+    this.navList.classList.toggle(this.activeClass);
+    this.mobileMenu.classList.toggle(this.activeClass);
+    this.animateLinks();
+  }
 
-    handleKeydown(event) {
-        if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault(); // evita scroll se for barra de espaço
-            this.handleClick();
-        }
+  handleKeydown(event) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault(); // evita scroll se for barra de espaço
+      this.handleClick();
     }
+  }
 
-    addClickEvent() {
-        this.mobileMenu.addEventListener("click", this.handleClick);
-        this.mobileMenu.addEventListener("keydown", this.handleKeydown);
-    }
+  addClickEvent() {
+    this.mobileMenu.addEventListener("click", this.handleClick);
+    this.mobileMenu.addEventListener("keydown", this.handleKeydown);
+  }
 
-    init() {
-        if (this.mobileMenu) {
-            this.addClickEvent();
-        }
-        return this;
+  init() {
+    if (this.mobileMenu) {
+      this.addClickEvent();
     }
+    return this;
+  }
 }
 
 const mobileNavbar = new MobileNavbar(
-    ".mobile-menu",
-    ".nav-list",
-    ".nav-list li",
+  ".mobile-menu",
+  ".nav-list",
+  ".nav-list li",
 );
 mobileNavbar.init();
 
@@ -92,22 +92,22 @@ if (searchInput) {
 
 
 function formatString(value) {
-    return value.toLowerCase().trim();
+  return value.toLowerCase().trim();
 }
 
 //Scroll para o topo da página
 const backToTopButton = document.querySelector('.back-to-top')
 
 const backToTop = () => {
-    if (window.scrollY >= 100) {
-        backToTopButton.classList.add('show')
-    } else {
-        backToTopButton.classList.remove('show')
-    }
+  if (window.scrollY >= 100) {
+    backToTopButton.classList.add('show')
+  } else {
+    backToTopButton.classList.remove('show')
+  }
 }
 
 window.addEventListener('scroll', function () {
-    backToTop()
+  backToTop()
 });
 
 const imagens = [
@@ -139,5 +139,4 @@ window.prevSlide = function () {
   indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length;
   mostrarImagem();
 };
-
 document.addEventListener('DOMContentLoaded', mostrarImagem);

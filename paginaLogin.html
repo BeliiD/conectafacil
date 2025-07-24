@@ -25,12 +25,12 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
     <script src="firebase.js"></script>
 
-    <script>
+    <!-- <script>
         document.getElementById('formLogin').addEventListener('submit', async (e) => {
             e.preventDefault();
             const email = document.getElementById('email').value;
             const senha = document.getElementById('senha').value;
-
+            console.log(email);
             try {
                 await auth.signInWithEmailAndPassword(email, senha);
                 window.location.href = "index.html";
@@ -38,5 +38,5 @@
                 alert("Erro: " + error.message);
             }
         });
-    </script>
+    </script> -->
 </body>

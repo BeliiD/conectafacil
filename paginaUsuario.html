@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página do Usuário</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <script>
+        (function (d) {
+            var s = d.createElement("script");
+            s.setAttribute("data-widget-layout", "full");
+            s.setAttribute("data-account", "URCfNynVSi");
+            s.setAttribute("src", "https://cdn.userway.org/widget.js");
+            (d.body || d.head).appendChild(s);
+        })(document);
+    </script>
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="nav-header">
+            <a class="logo" href="/">
+                <img src="img/logo_conectafacil.png" alt="Logo ConectaFácil" class="logo-img">
+            </a>
+            <div class="mobile-menu" role="button" tabindex="0" aria-label="Abrir ou fechar menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="modulos.html">Módulos</a></li>
+                <li id="login-button-offline"><a href="paginaLogin.html">Entrar</a></li>
+                <li id="login-button-online"><a href="paginaUsuario.html"><img src="img/Foto_de_perfil.png" alt=""></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-usuario">
+        <h2>Olá Marcelo Santana!</h2>
+        <p>Seja benvindo(a) a sua jornada de aprendizado</p>
+
+        <section class="secao-usuario" id="info-usuario">
+            <img src="img/Foto_de_perfil.png" alt="">
+
+            <div id="informacoes-usuario">
+                <div>
+                    <dt><strong>E-mail de cadastro:</strong></dt>
+                    <dd>emailexemplo@gmail.com</dd>
+                </div>
+                <hr>
+                <div>
+                    <h4>Seu progresso</h4>
+                    <progress></progress>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-usuario">
+            <h4>Modulo(s) em andamento</h4>
+            <ul>
+                <li>um modulo</li>
+                <li>um modulo</li>
+                <li>um modulo</li>
+                <li>um modulo</li>
+            </ul>
+        </section>
+
+        <section class="secao-usuario">
+            <h4>Modulo(s) concluídos</h4>
+            <ul>
+                <li>um modulo</li>
+                <li>um modulo</li>
+                <li>um modulo</li>
+                <li>um modulo</li>
+            </ul>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <div class="container">
+            <p>Contato </p>
+            <p> cosaicsite@gmail.com </p>
+        </div>
+    </footer>
+    <!-- Firebase SDK compatível -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="firebase.js"></script>
+
+    <script>
+        const loginButtonOffline = document.getElementById('login-button-offline');
+        const loginButtonOnline = document.getElementById('login-button-online');
+        // Inicializa o Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                // Usuário está logado
+                console.log("Usuário logado:", user.email);
+                loginButtonOffline.style.display = 'none';
+                loginButtonOnline.style.display = 'block';
+                // Ex: mostrar conteúdo exclusivo ou redirecionar
+            } else {
+                // Usuário não está logado
+                console.log("Nenhum usuário logado");
+                // Ex: redirecionar para tela de login
+                window.location.href = "login.html";
+            }
+        });
+    </script>
+</body>
+
+</html>

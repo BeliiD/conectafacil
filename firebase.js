@@ -14,3 +14,17 @@ firebase.initializeApp(firebaseConfig);
 // Serviços
 const auth = firebase.auth();
 const db = firebase.firestore();
+
+document.getElementById('formLogin').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const email = document.getElementById('email').value;
+  const senha = document.getElementById('senha').value;
+  console.log(email);
+  try {
+    await auth.signInWithEmailAndPassword(email, senha);
+    window.location.href = "index.html";
+  } catch (error) {
+    alert("Erro: " + error.message);
+  }
+});
+

@@ -35,9 +35,6 @@
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
   <script src="firebase.js"></script>
 
-  
-
-
   <div vw class="enabled">
     <div vw-access-button class="active"></div>
     <div vw-plugin-wrapper>
@@ -62,7 +59,8 @@
       <ul class="nav-list">
         <li><a href="index.html">Início</a></li>
         <li><a href="modulos.html">Módulos</a></li>
-        <li><a href="paginaLogin.html" id="login-button">Entrar</a></li>
+        <li id="login-button-offline"><a href="paginaLogin.html">Entrar</a></li>
+        <li id="login-button-online"><a href="paginaUsuario.html"><img src="img/Foto_de_perfil.png" alt=""></a></li>
       </ul>
     </nav>
   </header>
@@ -141,6 +139,28 @@
       <p> cosaicsite@gmail.com </p>
     </div>
   </footer>
+
+  <script>
+    const loginButtonOffline = document.getElementById('login-button-offline');
+    const loginButtonOnline = document.getElementById('login-button-online');
+    // Inicializa o Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // Usuário está logado
+        console.log("Usuário logado:", user.email);
+        loginButtonOffline.style.display = 'none';
+        loginButtonOnline.style.display = 'block';
+        // Ex: mostrar conteúdo exclusivo ou redirecionar
+      } else {
+        // Usuário não está logado
+        console.log("Nenhum usuário logado");
+        // Ex: redirecionar para tela de login
+        window.location.href = "login.html";
+      }
+    });
+  </script>
 
   <script src="script.js"></script>
 
