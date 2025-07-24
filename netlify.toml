@@ -1,0 +1,10 @@
+[build]
+  publish = "."
+  command = ""
+
+# Esta regra anula qualquer outra regra de redirecionamento para a página principal.
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+  force = true
