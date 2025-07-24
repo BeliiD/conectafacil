@@ -49,15 +49,6 @@
         await db.collection("usuarios").doc(userCred.user.uid).set({
           nome, email, nascimento, formacao
         });
-        await db.collection("usuarios")
-          .doc(userCred.user.uid)
-          .collection("progresso")
-          .doc("curso1")
-          .set({
-            status: "em andamento",
-            porcentagem: 40,
-            ultimaAula: "Aula 3 - Introdução ao JS"
-          });
         alert("Cadastro realizado com sucesso!");
         window.location.href = "index.html";
       } catch (error) {
