@@ -59,12 +59,12 @@
                 <hr>
                 <div>
                     <h4>Seu progresso</h4>
-                    <progress></progress>
+                    <progress id="meuProgresso" max="100"></progress>
                 </div>
             </div>
         </section>
 
-        <section class="secao-usuario">
+        <!-- <section class="secao-usuario">
             <h4>Modulo(s) em andamento</h4>
             <ul>
                 <li>um modulo</li>
@@ -82,7 +82,7 @@
                 <li>um modulo</li>
                 <li>um modulo</li>
             </ul>
-        </section>
+        </section> -->
 
     </main>
 
@@ -119,6 +119,30 @@
                 window.location.href = "login.html";
             }
         });
+        firebase.auth().onAuthStateChanged(async function (user) {
+            const uid = user.uid
+            db.collection("usuarios").doc(uid).collection("progresso").get()
+                .then((querySnapshot) => {
+                    let somaTotal = 0;
+
+                    querySnapshot.forEach((doc) => {
+                        const dados = doc.data();
+                        const progresso = dados.porcentagem || 0; // Garante que não vai dar erro se estiver indefinido
+                        somaTotal += progresso;
+                    });
+                    var progresso = somaTotal / 4
+                    const barraProgresso = document.getElementById("meuProgresso");
+
+                    if (barraProgresso.value < 100) {
+                        barraProgresso.value = progresso;
+                    }
+                    console.log("Soma total do progresso:", progresso);
+                })
+                .catch((error) => {
+                    console.error("Erro ao buscar documentos:", error);
+                });
+        });
+
     </script>
 </body>
 

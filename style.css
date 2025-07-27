@@ -282,6 +282,15 @@ main {
   border: 1px solid rgb(187, 187, 187);
 }
 
+#meuProgresso {
+  width: 70%;
+  height: 2em;
+}
+
+#meuProgresso::-webkit-progress-bar {
+  background-color: var(--cor3);
+}
+
 #info-usuario {
   display: flex;
   align-items: center;
@@ -427,10 +436,9 @@ main {
 }
 
 .conteudo {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .control-conteudo {

@@ -50,48 +50,67 @@
       <ul class="nav-list">
         <li><a href="index.html">Início</a></li>
         <li><a href="modulos.html">Módulos</a></li>
+        <li id="login-button-offline"><a href="paginaLogin.html">Entrar</a></li>
+        <li id="login-button-online"><a href="paginaUsuario.html"><img src="img/Foto_de_perfil.png" alt=""></a>
       </ul>
     </nav>
   </header>
 
   <main>
-    <h1 class="titulo-modulo text-animation" >Navegação Básica</h1>
+    <h1 class="titulo-modulo text-animation">Navegação Básica</h1>
 
     <div class="control-conteudo text-animation">
       <a href="navegaçãoBasica.html" class="link-conteudo">Conteúdo em vídeo</a>
       <a href="Modulos-PDF/Modulo2PDF.html" class="link-conteudo">Conteúdo em PDF</a>
     </div>
 
-    <div id="carouselExample" class="carousel slide videos text-animation">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <iframe class="w-100" height="500" src="https://www.youtube.com/embed/Xo9Rgwy2kOg?si=buB3o-U-kcinwjFB"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <section class="conteudo">
+      <div id="carouselExample" class="carousel slide videos text-animation">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <iframe class="w-100" height="500" src="https://www.youtube.com/embed/Xo9Rgwy2kOg?si=buB3o-U-kcinwjFB"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="carousel-item">
+            <iframe class="w-100" height="500" src="https://www.youtube.com/embed/T4wOIeYdhtI?si=3uZ7x7fJUNiuKhRA"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="carousel-item">
+            <iframe class="w-100" height="500" src="https://www.youtube.com/embed/tYLu6E_8LG8?si=BlGrN4ppXDnLQ-6Q"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
-        <div class="carousel-item">
-          <iframe class="w-100" height="500" src="https://www.youtube.com/embed/T4wOIeYdhtI?si=3uZ7x7fJUNiuKhRA"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div class="carousel-item">
-          <iframe class="w-100" height="500" src="https://www.youtube.com/embed/tYLu6E_8LG8?si=BlGrN4ppXDnLQ-6Q"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+      <ul class="videos-vizualizados">
+        <li>
+          <input type="checkbox" id="videoVisto" onchange="contadorProgresso(this, 33.3, 'Navegação Básica')"><label
+            for="videoVisto">Como utilizar o email</label>
+        </li>
+        <li>
+          <input type="checkbox" id="videoVisto" onchange="contadorProgresso(this, 33.3, 'Navegação Básica')"><label
+            for="videoVisto">Navegação no computador google</label>
+        </li>
+        <li>
+          <input type="checkbox" id="videoVisto" onchange="contadorProgresso(this, 33.4, 'Navegação Básica')"><label
+            for="videoVisto">Navegação
+            em sites públicos </label>
+        </li>
+      </ul>
+    </section>
 
     <a href="https://drive.google.com/drive/folders/1BnjvsTFn4AsLVDONiVBWt6aCdU6ws1tI?usp=drive_link" target="_blank"
       class="download-button">
@@ -109,5 +128,30 @@
       <p> cosaicsite@gmail.com </p>
     </div>
   </footer>
+  <!-- Firebase SDK compatível -->
 
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  <script src="firebase.js"></script>
+  <script>
+    const loginButtonOffline = document.getElementById('login-button-offline');
+    const loginButtonOnline = document.getElementById('login-button-online');
+    // Inicializa o Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // Usuário está logado
+        console.log("Usuário logado:", user.email);
+        loginButtonOffline.style.display = 'none';
+        loginButtonOnline.style.display = 'block';
+        // Ex: mostrar conteúdo exclusivo ou redirecionar
+      } else {
+        // Usuário não está logado
+        console.log("Nenhum usuário logado");
+      }
+    });
+  </script>
+  <script src="progresso.js"></script>
   <script src="script.js"></script>

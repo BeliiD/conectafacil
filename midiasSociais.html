@@ -26,6 +26,12 @@
 
 <body>
 
+  <!-- Firebase SDK compatível -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  <script src="firebase.js"></script>
+
   <div vw class="enabled">
     <div vw-access-button class="active"></div>
     <div vw-plugin-wrapper>
@@ -50,6 +56,8 @@
       <ul class="nav-list">
         <li><a href="index.html">Início</a></li>
         <li><a href="modulos.html">Módulos</a></li>
+        <li id="login-button-offline"><a href="paginaLogin.html">Entrar</a></li>
+        <li id="login-button-online"><a href="paginaUsuario.html"><img src="img/Foto_de_perfil.png" alt=""></a>
       </ul>
     </nav>
   </header>
@@ -88,10 +96,16 @@
       </div>
       <ul class="videos-vizualizados">
         <li>
-          <input type="checkbox" id="video1"><label for="video1">Como instalar aplicativos no celular</label>
+          <input type="checkbox" id="videoVisto" onchange="contadorProgresso(this, 50, 'Mídias sociais')"><label
+            for="videoVisto">Como
+            instalar
+            aplicativos no celular</label>
         </li>
         <li>
-          <input type="checkbox" id="video1"><label for="video1">Redes sociais Meio proficional </label>
+          <input type="checkbox" id="videoVisto" onchange="contadorProgresso(this, 50, 'Mídias sociais')"><label
+            for="videoVisto">Redes
+            sociais Meio
+            proficional </label>
         </li>
       </ul>
     </section>
@@ -110,5 +124,27 @@
       <p> cosaicsite@gmail.com </p>
     </div>
   </footer>
+  <script>
+    const loginButtonOffline = document.getElementById('login-button-offline');
+    const loginButtonOnline = document.getElementById('login-button-online');
+    // Inicializa o Firebase
+    firebase.initializeApp(firebaseConfig);
 
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // Usuário está logado
+        console.log("Usuário logado:", user.email);
+        loginButtonOffline.style.display = 'none';
+        loginButtonOnline.style.display = 'block';
+        // Ex: mostrar conteúdo exclusivo ou redirecionar
+      } else {
+        // Usuário não está logado
+        console.log("Nenhum usuário logado");
+      }
+    });
+  </script>
+  <script src="progresso.js"></script>
   <script src="script.js"></script>
+</body>
+
+</html>
