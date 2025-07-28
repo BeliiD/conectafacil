@@ -62,3 +62,88 @@ form button:hover {
 .container a:hover {
   text-decoration: underline;
 }
+
+/* === Estilo exclusivo do formulário de cadastro === */
+.cadastro-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cadastro-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.cadastro-container input,
+.cadastro-container select,
+.cadastro-container button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.cadastro-container button {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cadastro-container button:hover {
+  background-color: #0056b3;
+}
+
+.cadastro-container label {
+  font-size: 14px;
+  display: block;
+  margin-top: 10px;
+}
+
+.cadastro-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.cadastro-container a:hover {
+  text-decoration: underline;
+}
+
+.politica-container {
+  font-family: 'Raleway', sans-serif;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  line-height: 1.6;
+  color: #333;
+}
+
+.politica-container h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.politica-container h2 {
+  font-size: 22px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.politica-container p {
+  font-size: 16px;
+  margin-bottom: 16px;
+}

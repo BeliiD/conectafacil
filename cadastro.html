@@ -10,11 +10,19 @@
 <body>
   <div class="container">
     <h2>Cadastro</h2>
+
+    <p style="font-size: 14px; color: #555;">
+      Seus dados serão utilizados apenas para criar sua conta e permitir o acesso à nossa plataforma. 
+      Garantimos o sigilo das informações conforme nossa 
+      <a href="politicaPrivacidade.html" target="_blank">Política de Privacidade</a>.
+    </p>
+
     <form id="formCadastro">
       <input type="text" id="nome" placeholder="Nome completo" required><br>
       <input type="email" id="email" placeholder="Email" required><br>
       <input type="password" id="senha" placeholder="Senha" required><br>
       <input type="date" id="nascimento" required><br>
+
       <select id="formacao" required>
         <option disabled selected value="">Formação Acadêmica</option>
         <option>Ensino Fundamental Incompleto</option>
@@ -23,11 +31,17 @@
         <option>Ensino Médio Completo</option>
         <option>Ensino Superior Incompleto</option>
         <option>Ensino Superior Completo</option>
-      </select><br>
+      </select><br><br>
+
+      <!-- Checkbox de consentimento LGPD -->
+      <label style="font-size: 14px;">
+        <input type="checkbox" id="consentimento" required>
+        Li e concordo com a <a href="politicaPrivacidade.html" target="_blank">Política de Privacidade</a>.
+      </label><br><br>
+
       <button type="submit">Cadastrar</button>
     </form>
   </div>
-
 
   <!-- Firebase SDK compatível -->
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
@@ -38,17 +52,30 @@
   <script>
     document.getElementById('formCadastro').addEventListener('submit', async (e) => {
       e.preventDefault();
+
       const nome = document.getElementById('nome').value;
       const email = document.getElementById('email').value;
       const senha = document.getElementById('senha').value;
       const nascimento = document.getElementById('nascimento').value;
       const formacao = document.getElementById('formacao').value;
+      const consentido = document.getElementById('consentimento').checked;
+
+      if (!consentido) {
+        alert("Você deve aceitar a Política de Privacidade para continuar.");
+        return;
+      }
 
       try {
         const userCred = await auth.createUserWithEmailAndPassword(email, senha);
         await db.collection("usuarios").doc(userCred.user.uid).set({
-          nome, email, nascimento, formacao
-        });
+  nome,
+  email,
+  nascimento,
+  formacao,
+  consentimento: true,
+  data_consentimento: new Date().toISOString()
+});
+
         alert("Cadastro realizado com sucesso!");
         window.location.href = "index.html";
       } catch (error) {
