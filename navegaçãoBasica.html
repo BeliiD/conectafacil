@@ -37,7 +37,7 @@
     new window.VLibras.Widget('https://vlibras.gov.br/app');
   </script>
 
-  <header class="main-header">
+  <header class="header">
     <nav class="nav-header">
       <a class="logo" href="/">
         <img src="img/logo_conectafacil.png" alt="Logo ConectaFácil" class="logo-img">
@@ -134,24 +134,6 @@
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
   <script src="firebase.js"></script>
-  <script>
-    const loginButtonOffline = document.getElementById('login-button-offline');
-    const loginButtonOnline = document.getElementById('login-button-online');
-    // Inicializa o Firebase
-    firebase.initializeApp(firebaseConfig);
-
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        // Usuário está logado
-        console.log("Usuário logado:", user.email);
-        loginButtonOffline.style.display = 'none';
-        loginButtonOnline.style.display = 'block';
-        // Ex: mostrar conteúdo exclusivo ou redirecionar
-      } else {
-        // Usuário não está logado
-        console.log("Nenhum usuário logado");
-      }
-    });
-  </script>
   <script src="progresso.js"></script>
+  <script src="usuario.js"></script>
   <script src="script.js"></script>

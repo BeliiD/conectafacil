@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <header class="main-header">
+    <header class="header">
         <nav class="nav-header">
             <a class="logo" href="/">
                 <img src="img/logo_conectafacil.png" alt="Logo ConectaFácil" class="logo-img">
@@ -45,8 +45,8 @@
     </header>
 
     <main id="main-usuario">
-        <h2>Olá Marcelo Santana!</h2>
-        <p>Seja benvindo(a) a sua jornada de aprendizado</p>
+        <h2 id="nome-usuario">Olá Marcelo !</h2>
+        <p>Seja muito benvindo(a) a sua jornada de aprendizado!!</p>
 
         <section class="secao-usuario" id="info-usuario">
             <img src="img/Foto_de_perfil.png" alt="">
@@ -54,7 +54,7 @@
             <div id="informacoes-usuario">
                 <div>
                     <dt><strong>E-mail de cadastro:</strong></dt>
-                    <dd>emailexemplo@gmail.com</dd>
+                    <dd id="email-usuario">emailexemplo@gmail.com</dd>
                 </div>
                 <hr>
                 <div>
@@ -64,28 +64,16 @@
             </div>
         </section>
 
-        <!-- <section class="secao-usuario">
-            <h4>Modulo(s) em andamento</h4>
-            <ul>
-                <li>um modulo</li>
-                <li>um modulo</li>
-                <li>um modulo</li>
-                <li>um modulo</li>
-            </ul>
+        <section class="progresso-detalhado">
+            <h4>Modulo(s) em andamento:</h4>
+            <ul id="modulos-nao-concluidos"></ul>
         </section>
 
-        <section class="secao-usuario">
-            <h4>Modulo(s) concluídos</h4>
-            <ul>
-                <li>um modulo</li>
-                <li>um modulo</li>
-                <li>um modulo</li>
-                <li>um modulo</li>
-            </ul>
-        </section> -->
-
+        <section class="progresso-detalhado">
+            <h4>Modulo(s) concluídos:</h4>
+            <ul id="modulos-concluidos"></ul>
+        </section>
     </main>
-
 
     <footer>
         <div class="container">
@@ -98,51 +86,8 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
     <script src="firebase.js"></script>
-
-    <script>
-        const loginButtonOffline = document.getElementById('login-button-offline');
-        const loginButtonOnline = document.getElementById('login-button-online');
-        // Inicializa o Firebase
-        firebase.initializeApp(firebaseConfig);
-
-        firebase.auth().onAuthStateChanged((user) => {
-            if (user) {
-                // Usuário está logado
-                console.log("Usuário logado:", user.email);
-                loginButtonOffline.style.display = 'none';
-                loginButtonOnline.style.display = 'block';
-                // Ex: mostrar conteúdo exclusivo ou redirecionar
-            } else {
-                // Usuário não está logado
-                console.log("Nenhum usuário logado");
-                // Ex: redirecionar para tela de login
-                window.location.href = "login.html";
-            }
-        });
-        firebase.auth().onAuthStateChanged(async function (user) {
-            const uid = user.uid
-            db.collection("usuarios").doc(uid).collection("progresso").get()
-                .then((querySnapshot) => {
-                    let somaTotal = 0;
-
-                    querySnapshot.forEach((doc) => {
-                        const dados = doc.data();
-                        const progresso = dados.porcentagem || 0; // Garante que não vai dar erro se estiver indefinido
-                        somaTotal += progresso;
-                    });
-                    var progresso = somaTotal / 4
-                    const barraProgresso = document.getElementById("meuProgresso");
-
-                    if (barraProgresso.value < 100) {
-                        barraProgresso.value = progresso;
-                    }
-                    console.log("Soma total do progresso:", progresso);
-                })
-                .catch((error) => {
-                    console.error("Erro ao buscar documentos:", error);
-                });
-        });
-
+    <script src="usuario.js"></script>
+    <script src="script.js"></script>
     </script>
 </body>
 
