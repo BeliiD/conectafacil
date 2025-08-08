@@ -14,7 +14,7 @@ firebase.auth().onAuthStateChanged((user) => {
     } else {
         // Usuário não está logado
         // Ex: redirecionar para tela de login
-        window.location.href = "login.html";
+        // window.location.href = "index.html";
     }
 });
 
@@ -49,22 +49,23 @@ firebase.auth().onAuthStateChanged(async function (user) {
 
             querySnapshot.forEach((doc) => {
                 if (doc.data().porcentagem > 99) {
-                    const moduloConcluido = document.getElementById('modulos-concluidos');
+                    let moduloConcluido = document.getElementById('modulos-concluidos');
                     moduloConcluido.innerHTML += `<li>${doc.id}</li>`;
                 }
             });
         });
 });
 
-firebase.auth().onAuthStateChanged(async function (user) {
-    const uid = user.uid
+firebase.auth().onAuthStateChanged(async function (User) {
+    const uid = User.uid
     db.collection("usuarios").doc(uid).collection("progresso").get()
         .then((querySnapshot) => {
 
             querySnapshot.forEach((doc) => {
                 if (doc.data().porcentagem < 99) {
-                    const moduloConcluido = document.getElementById('modulos-nao-concluidos');
-                    moduloConcluido.innerHTML += `<li>${doc.id}</li>`;
+                    let moduloNaoConcluido = document.getElementById('modulos-nao-concluidos');
+                    moduloNaoConcluido.innerHTML += `<li>${doc.id}</li>`;
+                    console.log(doc.id);
                 }
             });
         });
@@ -102,3 +103,18 @@ firebase.auth().onAuthStateChanged((user) => {
     const emailUsuario = document.getElementById('email-usuario');
     emailUsuario.innerHTML = user.email;
 });
+
+firebase.auth().onAuthStateChanged(async function (user) {
+    const uid = user.uid
+    db.collection("usuarios").doc(uid).collection("progresso").get()
+        .then((querySnapshot) => {
+
+            querySnapshot.forEach((doc) => {
+                if (doc.data().porcentagem > 99) {
+                    let moduloConcluido = document.getElementById('modulos-concluidos');
+                    moduloConcluido.innerHTML += `<li>${doc.id}</li>`;
+                }
+            });
+        });
+});
+

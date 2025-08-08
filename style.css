@@ -104,7 +104,8 @@ main {
 .nav-list li {
   letter-spacing: 3px;
   margin-left: 32px;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   padding: 10px 20px;
   margin-left: 15px;
   text-decoration: none;
@@ -131,7 +132,8 @@ main {
 .nav-list a::before {
   contain: '';
   content: '';
-  width: 0;
+  width: 100%;
+  transform: scale(0);
   height: 2px;
   background-color: var(--cor3);
   bottom: -10px;
@@ -140,7 +142,7 @@ main {
 }
 
 .nav-list a:hover::before {
-  width: 20px;
+  transform: scale(1);
 }
 
 #login-button-offline {
@@ -336,6 +338,21 @@ dd {
   font-size: 20px;
 }
 
+#logout {
+  width: 160px;
+  height: 50px;
+  border: 2px solid rgb(197, 1, 1);
+  border-radius: 30px;
+  background-color: rgb(255, 131, 131);
+  font-size: 32px;
+  color: #fff;
+  transition: 0.5s;
+}
+
+#logout:hover {
+  background-color: rgb(197, 1, 1);
+}
+
 .progresso-detalhado {
   width: 100%;
   padding: 10px;
@@ -399,7 +416,7 @@ dd {
 .card-container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   /*Obriga o navegador a distribuir os cards em colunhas alinhadas*/
   gap: 30px;
   justify-items: stretch;
@@ -447,7 +464,7 @@ dd {
   border: 0.5px solid #d1d1d1;
   border-radius: 15px;
   padding: 16px;
-  width: 400px;
+  width: auto;
   height: 350px;
   box-sizing: border-box;
   transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
@@ -481,6 +498,7 @@ dd {
 .conteudo {
   width: 70%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
@@ -520,7 +538,7 @@ dd {
   border: 3px solid rgb(195, 189, 189);
 }
 
-.videos-vizualizados li {
+.videos-vizualizados li label {
   display: flex;
   gap: 10px;
   align-items: center;
@@ -611,7 +629,7 @@ dd {
 .text-animation {
   position: relative;
   animation-name: example;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
   animation-iteration-count: 1;
 }
 
@@ -693,7 +711,7 @@ footer {
 @media screen and (max-width: 1370px) {
 
   .modulos-container {
-    padding: 50px;
+    padding: 10px;
   }
 
   .card-container {
@@ -702,7 +720,7 @@ footer {
   }
 
   .card {
-    width: 380px;
+    width: auto;
   }
 
   .conteudo-pdf embed {
@@ -788,7 +806,7 @@ footer {
   }
 
   .card {
-    width: 300px;
+    width: auto;
     height: 250;
   }
 
@@ -1156,4 +1174,8 @@ select {
   /* centraliza horizontalmente */
   display: block;
   margin-bottom: 10px;
+}
+
+.main-modulo {
+  margin-top: 6em;
 }

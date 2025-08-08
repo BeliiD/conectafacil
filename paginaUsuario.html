@@ -61,6 +61,8 @@
                     <h4>Seu progresso</h4>
                     <progress id="meuProgresso" max="100"></progress>
                 </div>
+
+                <button id="logout">Sair</button>
             </div>
         </section>
 
@@ -88,6 +90,18 @@
     <script src="firebase.js"></script>
     <script src="usuario.js"></script>
     <script src="script.js"></script>
+    </script>
+    <script>
+        const logoutBtn = document.getElementById('logout');
+
+        logoutBtn.addEventListener('click', () => {
+            firebase.auth().signOut().then(() => {
+                alert('Você saiu com sucesso!');
+            }).catch((error) => {
+                console.error('Erro ao sair:', error);
+                alert('Erro ao sair. Tente novamente.');
+            });
+        });
     </script>
 </body>
 
