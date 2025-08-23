@@ -71,20 +71,6 @@ firebase.auth().onAuthStateChanged(async function (User) {
         });
 });
 
-firebase.auth().onAuthStateChanged(async function (user) {
-    const uid = user.uid
-    db.collection("usuarios").doc(uid).collection("progresso").get()
-        .then((querySnapshot) => {
-
-            querySnapshot.forEach((doc) => {
-                if (doc.data().porcentagem < 99) {
-                    const moduloConcluido = document.getElementById('modulos-nao-concluidos');
-                    moduloConcluido.innerHTML += `<li>${doc.id}</li>`;
-                }
-            });
-        });
-});
-
 //Inserindo dados do usuário no HTML:
 firebase.auth().onAuthStateChanged((user) => {
 
@@ -104,17 +90,4 @@ firebase.auth().onAuthStateChanged((user) => {
     emailUsuario.innerHTML = user.email;
 });
 
-firebase.auth().onAuthStateChanged(async function (user) {
-    const uid = user.uid
-    db.collection("usuarios").doc(uid).collection("progresso").get()
-        .then((querySnapshot) => {
-
-            querySnapshot.forEach((doc) => {
-                if (doc.data().porcentagem > 99) {
-                    let moduloConcluido = document.getElementById('modulos-concluidos');
-                    moduloConcluido.innerHTML += `<li>${doc.id}</li>`;
-                }
-            });
-        });
-});
 

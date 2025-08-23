@@ -1,5 +1,6 @@
 firebase.initializeApp(firebaseConfig);
 async function contadorProgresso(checkbox, porcentagemVideo, nomeModulo) {
+    nomeModulo = nomeModulo.toLowerCase();
     if (checkbox.checked) {
         firebase.auth().onAuthStateChanged(async function (user) {
             if (user) {
@@ -36,10 +37,13 @@ async function contadorProgresso(checkbox, porcentagemVideo, nomeModulo) {
     }
 }
 
+
+const titleModulo = document.getElementById('titulo-modulo').innerText.toLocaleLowerCase();
+console.log(titleModulo);
 firebase.auth().onAuthStateChanged(async function (user) {
     const uid = user.uid
 
-    db.collection("usuarios").doc(uid).collection("progresso").doc("Mídias sociais").get()
+    db.collection("usuarios").doc(uid).collection("progresso").doc(titleModulo).get()
         .then((doc) => {
             if (doc.exists) {
                 const dados = doc.data();

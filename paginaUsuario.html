@@ -97,6 +97,7 @@
         logoutBtn.addEventListener('click', () => {
             firebase.auth().signOut().then(() => {
                 alert('Você saiu com sucesso!');
+                window.location.reload();
             }).catch((error) => {
                 console.error('Erro ao sair:', error);
                 alert('Erro ao sair. Tente novamente.');

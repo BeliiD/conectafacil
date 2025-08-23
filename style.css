@@ -48,7 +48,7 @@ main {
   top: 0%;
   left: 0%;
   border-bottom: 1px solid #ddd;
-  box-shadow: 0px 10px 8px #d1d1d1;
+  box-shadow: 0px 10px 8px #cecece85;
   height: 5em;
   display: flex;
   flex-direction: column;
@@ -189,16 +189,21 @@ main {
   margin: 20px;
 }
 
+.welcome-section {
+  margin-top: 5.5em;
+}
+
 .welcome-section h2 {
   font-size: 1.8em;
   margin-bottom: 30px;
 }
 
 .content-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 40px;
   margin-bottom: 2em;
+  align-items: center;
 }
 
 .text-content {
