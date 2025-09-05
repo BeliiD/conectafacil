@@ -1,24 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
-
-  const vlibrasButton = document.querySelector('.vlibras-button');
-
-  if (vlibrasButton) {
-
-    vlibrasButton.addEventListener('click', () => {
-
-      alert('O botão Vlibras foi clicado! Aqui você poderia integrar a funcionalidade.');
-    });
-
-  }
-
-});
-
 class MobileNavbar {
   constructor(mobileMenu, navList, navLinks) {
     this.mobileMenu = document.querySelector(mobileMenu);
     this.navList = document.querySelector(navList);
     this.navLinks = document.querySelectorAll(navLinks);
-    this.activeClass = "active";
+    this.activeClass = "Active";
 
     this.handleClick = this.handleClick.bind(this);
     this.handleKeydown = this.handleKeydown.bind(this);

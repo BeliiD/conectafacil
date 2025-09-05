@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ConectaNet - Módulos</title>
-  
-<link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 
   <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -49,13 +49,12 @@
 
   <main class="main-modulo">
     <h1 id="titulo-modulo">Mídias Sociais</h1>
-
     <div class="control-conteudo text-animation">
       <a href="midiasSociais.html" class="link-conteudo">Conteúdo em vídeo</a>
       <a href="Modulos-PDF/Modulo4PDF.html" class="link-conteudo">Conteúdo em PDF</a>
     </div>
     <section class="conteudo">
-      <div id="carouselExample" class="carousel slide videos text-animation">
+      <div id="carouselExampleIndicators" class="carousel slide videos text-animation">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <iframe class="w-100" height="500" src="https://www.youtube.com/embed/rTnRUHbETAI?si=lYGypyiw_IVyeOiF"
@@ -70,26 +69,43 @@
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
-        </button>
+        </button> -->
       </div>
-      <ul class="videos-vizualizados">
-        <li>
-          <label><input type="checkbox" id="videoVisto1" onchange="contadorProgresso(this, 50, 'Mídias sociais')">
-            Como instalar aplicativos no celular</label>
+      <ul class="videos-vizualizados versao-computador">
+        <!-- <li>
+          <label><input type="checkbox" id="videoVisto1"
+              onchange="contadorProgresso(this, 50, 'Acesso a aparelhos eletrônicos')">Ligar e desligar o
+            computador</label>
         </li>
         <li>
-          <label><input type="checkbox" id="videoVisto2" onchange="contadorProgresso(this, 50, 'Mídias sociais')">
-            Redes sociais Meio proficional </label>
-        </li>
+          <label><input type="checkbox" id="videoVisto2"
+              onchange="contadorProgresso(this, 50, 'Acesso a aparelhos eletrônicos')">Conectar o computador ao wi-fi
+          </label>
+        </li> -->
+        <div class="carousel-indicators"
+          style="position: relative; right: 10px; z-index: 1; align-items: start; padding:20px; height: auto;">
+          <label for="">
+            <button style="height: 20px; width: 20px; background-color: none; border: 1px solid black;" type="button"
+              data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active nav-video"
+              aria-current="true" aria-label="Slide 1"></button>
+            Ligar e desligar o computador
+          </label>
+          <label for="">
+            <button style="height: 20px; width: 20px; background-color: none; border: 1px solid black;" type="button"
+              data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            Conectar o computador ao wi-fi
+          </label>
+        </div>
       </ul>
     </section>
+
 
     <a href="https://drive.google.com/drive/folders/10pB1wdmGJQYuRTUkMxqq_1_wJ4TUUUlg?usp=drive_link" target="_blank"
       class="download-button">

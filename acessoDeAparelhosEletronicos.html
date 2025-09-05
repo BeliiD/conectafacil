@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ConectaNet - Módulos</title>
-  
+
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 
   <link rel="stylesheet" href="style.css">
@@ -57,17 +57,77 @@
       <a href="Modulos-PDF/Modulo1PDF.html" class="link-conteudo">Conteúdo em PDF</a>
     </div>
 
-    <section class="conteudo">
-      <div id="carouselExample" class="carousel slide videos">
+    <section class="conteudo versao-computador" style="position: relative;">
+      <div id="carouselExampleIndicators" class="carousel slide videos">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <iframe class="w-100" height="500" src="https://www.youtube.com/embed/izqrofv0Ijo?si=edvRTGopS95vExRd"
+            <iframe class="w-100" height="500" src="https://www.youtube.com/embed/j-tkJ9Ib_vY?si=IDP67iRMNFnPkpXG"
               title="YouTube video player" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
           <div class="carousel-item">
-            <iframe class="w-100" height="500" src="https://www.youtube.com/embed/Mvt9UoN-SAY?si=lSsvQAwi335_V4jP"
+            <iframe class="w-100" height="500" src="https://youtube.com/embed/8wI-nL98SlI?si=UmZBl6BBqdJb0iFd"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button> -->
+      </div>
+
+      <ul class="videos-vizualizados versao-computador">
+        <!-- <li>
+          <label><input type="checkbox" id="videoVisto1"
+              onchange="contadorProgresso(this, 50, 'Acesso a aparelhos eletrônicos')">Ligar e desligar o
+            computador</label>
+        </li>
+        <li>
+          <label><input type="checkbox" id="videoVisto2"
+              onchange="contadorProgresso(this, 50, 'Acesso a aparelhos eletrônicos')">Conectar o computador ao wi-fi
+          </label>
+        </li> -->
+        <div class="carousel-indicators"
+          style="position: relative; right: 10px; z-index: 1; align-items: start; padding:20px; height: auto;">
+          <label for="">
+            <button style="height: 20px; width: 20px; background-color: none; border: 1px solid black;" type="button"
+              data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active nav-video"
+              aria-current="true" aria-label="Slide 1"></button>
+            Ligar e desligar o computador
+          </label>
+          <label for="">
+            <button style="height: 20px; width: 20px; background-color: none; border: 1px solid black;" type="button"
+              data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            Conectar o computador ao wi-fi
+          </label>
+        </div>
+      </ul>
+    </section>
+
+    <section class="conteudo versao-celular">
+      <div id="carouselExample" class="carousel slide videos">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <iframe class="w-100" height="500" src="https://www.youtube.com/embed/tDzAXUOmTbY?si=9FddAa4wmLNItDW5"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="carousel-item">
+            <iframe class="w-100" height="500" src="https://www.youtube.com/embed/xIR0NIXhhe4?si=atdicmGOGcSoPCtY"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="carousel-item">
+            <iframe class="w-100" height="500" src="https://www.youtube.com/embed/hAeEAOmJGF0?si=Z5uKdIzXWx93ZoCK"
               title="YouTube video player" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -81,19 +141,27 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
+
       </div>
-      <ul class="videos-vizualizados">
+      <ul class="videos-vizualizados versao-celular" style="margin-top: 20px;">
         <li>
           <label><input type="checkbox" id="videoVisto1"
-              onchange="contadorProgresso(this, 50, 'Acesso a aparelhos eletrônicos')">Como usar
-            o celular</label>
+              onchange="contadorProgresso(this, 33.3, 'Acesso a aparelhos eletrônicos')">Ligar e desligar o
+            celular</label>
         </li>
         <li>
           <label><input type="checkbox" id="videoVisto2"
-              onchange="contadorProgresso(this, 50, 'Acesso a aparelhos eletrônicos')">Como usar o computador </label>
+              onchange="contadorProgresso(this, 33.3, 'Acesso a aparelhos eletrônicos')">Wi-Fi e dados moveis
+          </label>
+        </li>
+        <li>
+          <label><input type="checkbox" id="videoVisto2"
+              onchange="contadorProgresso(this, 33.3, 'Acesso a aparelhos eletrônicos')">Rotação e bloqueio de tela
+          </label>
         </li>
       </ul>
     </section>
+
     <a href="https://drive.google.com/drive/folders/1aYHPBCMHyNBuCLt4My9AtmDqfyL8Vwt1?usp=drive_link" target="_blank"
       class="download-button">
       Baixar Conteúdos

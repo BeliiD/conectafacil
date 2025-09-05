@@ -431,6 +431,9 @@ dd {
 }
 
 .acesso-modulo {
+  position: absolute;
+  bottom: 50px;
+  right: 20px;
   color: #fff;
   font-size: 18px;
   width: 150px;
@@ -463,6 +466,7 @@ dd {
 }
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -470,7 +474,7 @@ dd {
   border-radius: 15px;
   padding: 16px;
   width: auto;
-  height: 350px;
+  height: 400px;
   box-sizing: border-box;
   transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
@@ -505,6 +509,15 @@ dd {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
+}
+
+.versao-computador {
+  display: flex;
+}
+
+.versao-celular {
+  display: none;
 }
 
 .control-conteudo {
@@ -531,7 +544,7 @@ dd {
   width: 100px;
 }
 
-.videos-vizualizados {
+/* .videos-vizualizados {
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -547,6 +560,47 @@ dd {
   display: flex;
   gap: 10px;
   align-items: center;
+} */
+
+.carousel-indicators {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  padding: 20px;
+  width: 480px;
+  background-color: var(--cor5);
+  padding: 20px;
+  height: 250px;
+  border-radius: 15px;
+  border: 3px solid rgb(195, 189, 189);
+  gap: 10px;
+}
+
+.carousel-indicators label {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.carousel-indicators label::before {
+  contain: '';
+  content: '';
+  width: 0px;
+  /* transform: scalex(0); */
+  /* height: 2px; */
+  background-color: var(--cor3);
+  bottom: -4px;
+  left: 0;
+  transition: 0.3s;
+  position: absolute;
+}
+
+.carousel-indicators label:hover::before {
+  /* transform: scalex(1); */
+  width: 100%;
+  height: 2px;
 }
 
 /* Caixa para o marcador */
@@ -695,7 +749,7 @@ dd {
   display: none;
 }
 
-.active {
+.Active {
   display: flex;
 }
 
@@ -825,6 +879,14 @@ footer {
 
   .control-conteudo a {
     font-size: 16px;
+  }
+
+  .versao-computador {
+    display: none;
+  }
+
+  .versao-celular {
+    display: flex;
   }
 
   .videos {
