@@ -125,3 +125,15 @@ window.prevSlide = function () {
   mostrarImagem();
 };
 document.addEventListener('DOMContentLoaded', mostrarImagem);
+
+const radios = document.querySelectorAll('input[name="navegacao-video"]');
+const iframes = document.querySelectorAll('.carousel-inner iframe');
+
+radios.forEach((radio, index) => {
+  radio.addEventListener('change', () => {
+    iframes.forEach(iframe => {
+      const src = iframe.src;
+      iframe.src = src; // recarrega o iframe e para o vídeo
+    });
+  });
+});
