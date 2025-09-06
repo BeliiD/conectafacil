@@ -189,6 +189,10 @@ main {
   margin: 20px;
 }
 
+#video-introducao {
+  width: 80%;
+}
+
 .welcome-section {
   margin-top: 5.5em;
 }
@@ -877,6 +881,10 @@ footer {
   .content-wrapper {
     grid-template-columns: 1fr;
     text-align: justify;
+  }
+
+  #video-introducao {
+    width: 100%;
   }
 
   .card-container {
