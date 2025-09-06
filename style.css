@@ -1048,6 +1048,7 @@ footer {
   cursor: pointer;
   text-decoration: none;
   margin-top: 10px;
+  margin-bottom: 20px;
   /* Espaço acima do botão */
   font-weight: 700;
   font-size: 20px;
