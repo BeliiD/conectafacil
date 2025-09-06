@@ -11,7 +11,11 @@ async function contadorProgresso(checkbox, porcentagemVideo, nomeModulo) {
                 try {
                     const docSnap = await docRef.get();
                     if (docSnap.exists) {
-                        if (docSnap.data().porcentagem < 100) { var porcentagemAtual = docSnap.data().porcentagem + porcentagemVideo; var qtdAtualVideosassistidos = docSnap.data().qtd_Videos_assistidos + 1; var nomeCampo = 'video ' + qtdAtualVideosassistidos; }
+                        if (docSnap.data().porcentagem < 99.99) {
+                            var porcentagemAtual = docSnap.data().porcentagem + porcentagemVideo;
+                            var qtdAtualVideosassistidos = docSnap.data().qtd_Videos_assistidos + 1;
+                            var nomeCampo = 'video ' + qtdAtualVideosassistidos;
+                        }
                         db.collection("usuarios").doc(uid).collection("progresso").doc(nomeModulo).set({
                             porcentagem: porcentagemAtual,
                             qtd_Videos_assistidos: qtdAtualVideosassistidos,
@@ -51,7 +55,7 @@ firebase.auth().onAuthStateChanged(async function (user) {
                 // Transforma os valores dos campos em um array
                 const valores = Object.values(dados);
 
-                for (var i = 1; i <= 3; i++) {
+                for (var i = 1; i <= 12; i++) {
                     const nomeInput = 'videoVisto' + i;
                     const Input = document.getElementById(nomeInput);
                     const textoInput = Input.parentElement.textContent.trim();
@@ -69,6 +73,26 @@ firebase.auth().onAuthStateChanged(async function (user) {
         .catch((error) => {
             console.error("Erro ao buscar documento:", error);
         });
+
 });
+
+//Navegção entre os vídeos
+const carouselEl = document.querySelector('#carouselExampleIndicators');
+const carouselInstance = bootstrap.Carousel.getInstance(carouselEl) || new bootstrap.Carousel(carouselEl);
+
+document.querySelectorAll('.video-item').forEach(div => {
+    div.addEventListener('click', (e) => {
+        // evita que o clique no checkbox desmarque radio
+        if (e.target.type === 'checkbox') return;
+
+        const radio = div.querySelector('input[type="radio"]');
+        if (radio) radio.checked = true;
+
+        // navegar no carousel
+        const slideIndex = parseInt(div.dataset.bsSlideTo);
+        if (!isNaN(slideIndex)) carouselInstance.to(slideIndex);
+    });
+});
+
 
 

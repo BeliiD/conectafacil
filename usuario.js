@@ -27,6 +27,7 @@ firebase.auth().onAuthStateChanged(async function (user) {
 
             querySnapshot.forEach((doc) => {
                 const dados = doc.data();
+                console.log(dados)
                 const progresso = dados.porcentagem || 0; // Garante que não vai dar erro se estiver indefinido
                 somaTotal += progresso;
             });
