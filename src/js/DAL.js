@@ -33,7 +33,7 @@ firebase.auth().onAuthStateChanged((user) => {
         loginButtonOffline.style.display = 'none';
         loginButtonOnline.style.display = 'block';
         // Ex: mostrar conteúdo exclusivo ou redirecionar
-    } else if (!caminho.includes('paginaLogin.html') && !user) {
+    } else if (!caminho.includes('paginaLogin.html')) {
         // Usuário não está logado
         // Ex: redirecionar para tela de login
         if (caminho.includes('index.html') || caminho.includes('modulos.html')) {
