@@ -33,10 +33,10 @@ firebase.auth().onAuthStateChanged((user) => {
         loginButtonOffline.style.display = 'none';
         loginButtonOnline.style.display = 'block';
         // Ex: mostrar conteúdo exclusivo ou redirecionar
-    } else if (!caminho.includes('paginaLogin.html')) {
+    } else if (!caminho.includes('paginaLogin')) {
         // Usuário não está logado
         // Ex: redirecionar para tela de login
-        if (caminho.includes('index.html') || caminho.includes('modulos.html')) {
+        if (caminho.includes('index') || caminho.includes('modulos')) {
             window.location.href = "Areas-usuario/paginaLogin.html";
         } else {
             window.location.href = "../Areas-usuario/paginaLogin.html";
