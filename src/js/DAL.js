@@ -37,9 +37,9 @@ firebase.auth().onAuthStateChanged((user) => {
         // Usuário não está logado
         // Ex: redirecionar para tela de login
         if (caminho.includes('index') || caminho.includes('modulos')) {
-            window.location.href = "Areas-usuario/paginaLogin.html";
+            window.location.href = "areas-usuario/paginalogin.html";
         } else {
-            window.location.href = "../Areas-usuario/paginaLogin.html";
+            window.location.href = "../areas-usuario/paginalogin.html";
         }
         // try {
         //     window.location.href = "../Areas-usuario/paginaLogin.html";
