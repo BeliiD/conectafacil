@@ -16,6 +16,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -986,6 +987,70 @@ footer {
     /* espaço extra abaixo do vídeo */
   }
 
+  #video-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #video-login h1 {
+    font-size: 24px;
+  }
+
+  .main-login {
+    grid-template-columns: 1fr !important;
+    margin: 0;
+    justify-content: center;
+    padding: 10% !important;
+    width: 100px;
+  }
+
+  #video-explicacao {
+    width: 100% !important;
+  }
+
+  .form-container {
+    position: relative;
+    max-width: 80%;
+    margin: 60px auto;
+    padding: 0;
+  }
+
+  .form-container h2 {
+    text-align: center;
+    color: #004b44;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .form-container input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #fff;
+  }
+
+  input:focus {
+    border-color: #0a766c;
+    outline: none;
+  }
+
+  .form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0a766c;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
 }
 
 .nav-list.active {
@@ -1295,9 +1360,9 @@ select {
 .main-login {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 10px;
-  padding: 10%;
-  width: 100%;
+  margin: 0 !important;
+  padding: 20px;
+  width: 80%;
 }
 
 #video-explicacao {
