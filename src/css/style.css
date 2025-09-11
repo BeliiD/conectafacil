@@ -690,9 +690,14 @@ dd {
   justify-content: center;
 }
 
-.conteudo-pdf embed {
-  width: 1500px;
-  height: 800px;
+.carousel-pdf {
+  width: 500px;
+  height: 1000px;
+}
+
+.item-pdf {
+  width: 1000px;
+  height: 1000px;
 }
 
 .control-conteudo a:hover {
@@ -1285,6 +1290,19 @@ select {
   /* centraliza horizontalmente */
   display: block;
   margin-bottom: 10px;
+}
+
+.main-login {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 10px;
+  padding: 10%;
+  width: 100%;
+}
+
+#video-explicacao {
+  margin-top: 2em;
+  width: 700px;
 }
 
 .main-modulo {

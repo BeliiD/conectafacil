@@ -8,7 +8,7 @@
 
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../src/css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
@@ -31,8 +31,8 @@
 <body>
   <header class="header">
     <nav class="nav-header">
-      <a class="logo" href="/">
-        <img src="img/logo_conectafacil.png" alt="Logo ConectaFácil" class="logo-img">
+      <a class="logo" href="../index.html">
+        <img src="../img/logo_conectafacil.png" alt="Logo ConectaFácil" class="logo-img">
       </a>
       <div class="mobile-menu">
         <div class="line1"></div>
@@ -40,10 +40,11 @@
         <div class="line3"></div>
       </div>
       <ul class="nav-list">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="modulos.html">Módulos</a></li>
-        <li id="login-button-offline"><a href="paginaLogin.html">Entrar</a></li>
-        <li id="login-button-online"><a href="paginaUsuario.html"><img src="img/Foto_de_perfil.png" alt=""></a>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="../modulos.html">Módulos</a></li>
+        <li id="login-button-offline"><a href="../Areas-usuario/paginaLogin.html">Entrar</a></li>
+        <li id="login-button-online"><a href="../Areas-usuario/paginaUsuario.html"><img src="../img/Foto_de_perfil.png"
+              alt=""></a>
       </ul>
     </nav>
   </header>
@@ -52,8 +53,8 @@
     <h1 id="titulo-modulo" class="text-animation" style="display: flex; justify-content: center; margin-bottom: 0;">
       Acesso a Aparelhos Eletrônicos</h1>
     <div class="control-conteudo text-animation">
-      <a href="acessoDeAparelhosEletronicos.html" class="link-conteudo">Conteúdo em vídeo</a>
-      <a href="Modulos-PDF/Modulo1PDF.html" class="link-conteudo">Conteúdo em PDF</a>
+      <a href="../Paginas-modulos/acessoDeAparelhosEletronicos.html" class="link-conteudo">Conteúdo em vídeo</a>
+      <a href="../Modulos-PDF/Modulo1PDF.html" class="link-conteudo">Conteúdo em PDF</a>
     </div>
 
     <section class="conteudo" style="position: relative;">
@@ -109,7 +110,7 @@
         <div class="video-item" data-bs-slide-to="2">
           <input type="checkbox" id="videoVisto3"
             onchange="contadorProgresso(this, 20, 'Acesso a aparelhos eletrônicos')">
-          <input type="radio" name="navegacao-video" id="radioVideo3" class="nav-video" checked>
+          <input type="radio" name="navegacao-video" id="radioVideo3" class="nav-video">
           <span>Ligar e desligar o celular</span>
         </div>
         <div class="video-item" data-bs-slide-to="3">
@@ -134,7 +135,7 @@
     </a>
     <br>
 
-    <a href="modulos.html" class="voltar-button">Voltar</a>
+    <button class="voltar-button" onclick="voltar()">Voltar</button>
   </main>
 
   <a href="#page-title" class="back-to-top" onclick="scrollToTop()">
@@ -154,10 +155,8 @@
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
-  <script src="firebase.js"></script>
-  <script src="usuario.js"></script>
-  <script src="progresso.js"></script>
-  <script src="script.js"></script>
+  <script src="../src/js/DAL.js"></script>
+  <script src="../src/js/Script.js"></script>
 
 </body>
 

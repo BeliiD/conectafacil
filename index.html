@@ -8,15 +8,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ConectaNet - Bem-vindo</title>
 
-  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 
-  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="src/css/style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   <script>
     (function (d) {
       var s = d.createElement("script");
@@ -43,15 +43,16 @@
       <ul class="nav-list">
         <li><a href="index.html">Início</a></li>
         <li><a href="modulos.html">Módulos</a></li>
-        <li id="login-button-offline"><a href="paginaLogin.html">Entrar</a></li>
-        <li id="login-button-online"><a href="paginaUsuario.html"><img src="img/Foto_de_perfil.png" alt=""></a></li>
+        <li id="login-button-offline"><a href="Areas-usuario/paginaLogin.html">Entrar</a></li>
+        <li id="login-button-online"><a href="Areas-usuario/paginaUsuario.html"><img src="img/Foto_de_perfil.png"
+              alt=""></a></li>
       </ul>
     </nav>
   </header>
   <main class="main-index">
     <div class="container">
       <section class="welcome-section text-animation">
-        <h2>Seja bem vindo ao ConectaFácil!</h2>
+        <h2>Seja bem vindo ao Vai-Idade - conectando gerações!</h2>
 
         <div class="content-wrapper text-animation">
           <img id="video-introducao" src="img/Vídeo Apresentação.png" alt="">
@@ -77,14 +78,8 @@
             </p>
           </div>
 
-          <!-- <div class="carousel">
-            <button class="prev" onclick="prevSlide()">❮</button>
-            <img id="carousel-img" src="img/img1.png" alt="Guia de uso">
-            <button class="next" onclick="nextSlide()">❯</button>
-          </div> -->
-        </div> <!-- Fim de content-wrapper -->
+        </div>
 
-        <!-- Mova o botão para cá, abaixo do guia -->
         <div class="feedback-button-container">
           <button class="feedback-button" onclick="window.open('https://forms.gle/r5MW9Z8BumHgSXeN6', '_blank')">
             Deixe sua opinião sobre o site
@@ -100,24 +95,6 @@
       Acessar nossos cursos
     </button>
 
-    <!-- <style>
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        display: flex;
-        flex-direction: column;
-      }
-
-      main {
-        flex-grow: 1;
-      }
-    </style> -->
-
   </main>
 
   <footer>
@@ -130,10 +107,8 @@
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
-  <script src="firebase.js"></script>
-  <script src="usuario.js"></script>
-  <script src="script.js"></script>
-
+  <script src="src/js/DAL.js"></script>
+  <script src="src/js/Script.js"></script>
 </body>
 
 </html>

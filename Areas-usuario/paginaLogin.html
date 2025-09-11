@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+  <!-- Estilos específicos do login -->
+  <link rel="stylesheet" href="../src/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main class="main-login">
+    <div>
+      <h1>Como logar na minha conta</h1>
+      <img src="../img/Vídeo Apresentação.png" id="video-explicacao" alt="">
+    </div>
+    <div class="form-container">
+      <img src="../img/logo_conectafacil.png" alt="Logo Vai-Idade" class="logo-login">
+      <h2>Login</h2>
+      <form id="formLogin">
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="senha" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+      </form>
+      <p>Ainda não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+    </div>
+  </main>
+
+  <!-- Firebase SDK compatível -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  <script src="../src/js/DAL.js"></script>
+  <script src="../src/js/Script.js"></script>
+  <script>
+    document.getElementById('formLogin').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('senha').value;
+      console.log(email);
+      try {
+        await auth.signInWithEmailAndPassword(email, senha);
+        window.location.href = "../index.html";
+        // console.log(user.uid)
+      } catch (error) {
+        alert("Erro: " + error.message);
+      }
+    });
+  </script>
+
+</body>

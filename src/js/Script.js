@@ -1,3 +1,5 @@
+
+
 class MobileNavbar {
   constructor(mobileMenu, navList, navLinks) {
     this.mobileMenu = document.querySelector(mobileMenu);
@@ -75,6 +77,9 @@ if (searchInput) {
   });
 }
 
+function voltar() {
+  window.history.back();
+}
 
 function formatString(value) {
   return value.toLowerCase().trim();
@@ -126,14 +131,36 @@ window.prevSlide = function () {
 };
 document.addEventListener('DOMContentLoaded', mostrarImagem);
 
-const radios = document.querySelectorAll('input[name="navegacao-video"]');
-const iframes = document.querySelectorAll('.carousel-inner iframe');
+//Navegação entre vídeos
 
-radios.forEach((radio, index) => {
-  radio.addEventListener('change', () => {
-    iframes.forEach(iframe => {
-      const src = iframe.src;
-      iframe.src = src; // recarrega o iframe e para o vídeo
-    });
+//Navegção entre os vídeos
+const carouselEl = document.querySelector('#carouselExampleIndicators');
+const carouselInstance = bootstrap.Carousel.getInstance(carouselEl) || new bootstrap.Carousel(carouselEl);
+
+document.querySelectorAll('.video-item').forEach(div => {
+  div.addEventListener('click', (e) => {
+    // evita que o clique no checkbox desmarque radio
+    if (e.target.type === 'checkbox') return;
+
+    const radio = div.querySelector('input[type="radio"]');
+    if (radio) radio.checked = true;
+
+    // navegar no carousel
+    const slideIndex = parseInt(div.dataset.bsSlideTo);
+    if (!isNaN(slideIndex)) atualizaVideos(); carouselInstance.to(slideIndex);
   });
 });
+
+function atualizaVideos() {
+  const iframes = document.querySelectorAll('.carousel-inner iframe');
+  const radios = document.querySelectorAll('.carousel-indicators input[name="navegacao-video"]');
+
+  radios.forEach((radio, index) => {
+    radio.addEventListener('change', () => {
+      iframes.forEach(iframe => {
+        const src = iframe.src;
+        iframe.src = src; // recarrega o iframe e para o vídeo
+      });
+    });
+  });
+}

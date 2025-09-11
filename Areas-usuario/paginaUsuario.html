@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página do Usuário</title>
-    
-   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+    <link rel="stylesheet" href="../src/css/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,30 +29,29 @@
 <body>
     <header class="header">
         <nav class="nav-header">
-            <a class="logo" href="/">
-                <img src="img/logo_conectafacil.png" alt="Logo ConectaFácil" class="logo-img">
+            <a class="logo" href="../index.html">
+                <img src="../img/logo_conectafacil.png" alt="Logo ConectaFácil" class="logo-img">
             </a>
-            <div class="mobile-menu" role="button" tabindex="0" aria-label="Abrir ou fechar menu">
+            <div class="mobile-menu">
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="modulos.html">Módulos</a></li>
-                <li id="login-button-offline"><a href="paginaLogin.html">Entrar</a></li>
-                <li id="login-button-online"><a href="paginaUsuario.html"><img src="img/Foto_de_perfil.png" alt=""></a>
-                </li>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../modulos.html">Módulos</a></li>
+                <li id="login-button-offline"><a href="../Areas-usuario/paginaLogin.html">Entrar</a></li>
+                <li id="login-button-online"><a href="../Areas-usuario/paginaUsuario.html"><img
+                            src="../img/Foto_de_perfil.png" alt=""></a>
             </ul>
         </nav>
     </header>
-
     <main id="main-usuario">
         <h2 id="nome-usuario">Olá Marcelo !</h2>
         <p>Seja muito benvindo(a) a sua jornada de aprendizado!!</p>
 
         <section class="secao-usuario" id="info-usuario">
-            <img src="img/Foto_de_perfil.png" alt="">
+            <img src="../img/Foto_de_perfil.png" alt="">
 
             <div id="informacoes-usuario">
                 <div>
@@ -90,9 +89,8 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
-    <script src="firebase.js"></script>
-    <script src="usuario.js"></script>
-    <script src="script.js"></script>
+    <script src="../src/js/DAL.js"></script>
+    <script src="../src/js/Script.js"></script>
     </script>
     <script>
         const logoutBtn = document.getElementById('logout');
