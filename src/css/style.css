@@ -191,7 +191,8 @@ main {
 }
 
 #video-introducao {
-  width: 80%;
+  width: 960px;
+  height: 540px;
 }
 
 .welcome-section {
@@ -782,6 +783,17 @@ dd {
   display: flex;
 }
 
+#video-login {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#video-login iframe {
+  width: 640px;
+  height: 360px;
+}
+
 /* --- Estilos do Rodapé --- */
 footer {
   background-color: #1a5e63;
@@ -890,7 +902,8 @@ footer {
   }
 
   #video-introducao {
-    width: 100%;
+    width: 320px;
+    height: 180px;
   }
 
   .card-container {
@@ -991,10 +1004,16 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
 
   #video-login h1 {
-    font-size: 24px;
+    font-size: 20px;
+  }
+
+  #video-login iframe {
+    width: 320px;
+    height: 180px;
   }
 
   .main-login {
