@@ -8,6 +8,13 @@ const firebaseConfig = {
   measurementId: "G-6XVD39RZ37"
 };
 
+//tag analytcs
+ window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6XVD39RZ37');
+
 // Inicializa o Firebase
 firebase.initializeApp(firebaseConfig);
 
