@@ -16,8 +16,6 @@ firebase.initializeApp(firebaseConfig);
 // Serviços
 const auth = firebase.auth();
 const db = firebase.firestore();
-console.log('chega');
-
 
 //Verificando se o usuário está logado:
 const loginButtonOffline = document.getElementById('login-button-offline');
@@ -28,8 +26,6 @@ firebase.initializeApp(firebaseConfig);
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-        // Usuário está logado
-        console.log(user.uid);
         loginButtonOffline.style.display = 'none';
         loginButtonOnline.style.display = 'block';
         // Ex: mostrar conteúdo exclusivo ou redirecionar
@@ -41,12 +37,6 @@ firebase.auth().onAuthStateChanged((user) => {
         } else {
             window.location.href = "../areas-usuario/paginalogin.html";
         }
-        // try {
-        //     window.location.href = "../Areas-usuario/paginaLogin.html";
-        // }
-        // catch {
-        //     console.log('Erro');
-        // }
     }
 });
 
@@ -59,7 +49,6 @@ firebase.auth().onAuthStateChanged(async function (user) {
 
             querySnapshot.forEach((doc) => {
                 const dados = doc.data();
-                // console.log(dados)
                 const progresso = dados.porcentagem || 0; // Garante que não vai dar erro se estiver indefinido
                 somaTotal += progresso;
             });
@@ -100,7 +89,6 @@ firebase.auth().onAuthStateChanged(async function (User) {
                 if (doc.data().porcentagem < 99) {
                     let moduloNaoConcluido = document.getElementById('modulos-nao-concluidos');
                     moduloNaoConcluido.innerHTML += `<li>${doc.id}</li>`;
-                    console.log(doc.id);
                 }
             });
         });
@@ -134,7 +122,6 @@ async function contadorProgresso(checkbox, porcentagemVideo, nomeModulo) {
             if (user) {
                 const uid = user.uid;
                 const nomeVideo = checkbox.parentElement.textContent.trim();
-                console.log(nomeVideo);
                 const docRef = db.collection("usuarios").doc(uid).collection("progresso").doc(nomeModulo);
                 try {
                     const docSnap = await docRef.get();
@@ -162,16 +149,13 @@ async function contadorProgresso(checkbox, porcentagemVideo, nomeModulo) {
                 } catch (error) {
                     console.error("Erro ao buscar documento:", error);
                 }
-            } else {
-                console.log("Nenhum usuário logado");
-            }
+            } 
         });
     }
 }
 
 //Busca por vídeos já assistidos
 const titleModulo = document.getElementById('titulo-modulo').innerText.toLocaleLowerCase();
-console.log(titleModulo);
 firebase.auth().onAuthStateChanged(async function (user) {
     const uid = user.uid
 
@@ -188,14 +172,10 @@ firebase.auth().onAuthStateChanged(async function (user) {
                     const Input = document.getElementById(nomeInput);
                     const textoInput = Input.parentElement.textContent.trim();
                     if (valores.includes(textoInput)) {
-                        // console.log(`O valor "${textoProcurado}" foi encontrado.`);
                         document.getElementById('videoVisto' + i).checked = true;
-                    } else {
-                        console.log(`O valor NÃO foi encontrado.`);
-                    }
+                    } else {                    }
                 }
             } else {
-                console.log("Documento não encontrado.");
             }
         })
         .catch((error) => {

@@ -22,6 +22,9 @@ document.getElementById('formLogin').addEventListener('submit', async (e) => {
   console.log(email);
   try {
     await auth.signInWithEmailAndPassword(email, senha);
+    logEvent(analytics, 'login_app', {
+    user_id: user.uid
+    });
     window.location.href = "index.html";
   } catch (error) {
     alert("Erro: " + error.message);

@@ -6,7 +6,6 @@ async function contadorProgresso(checkbox, porcentagemVideo, nomeModulo) {
             if (user) {
                 const uid = user.uid;
                 const nomeVideo = checkbox.parentElement.textContent.trim();
-                console.log(nomeVideo);
                 const docRef = db.collection("usuarios").doc(uid).collection("progresso").doc(nomeModulo);
                 try {
                     const docSnap = await docRef.get();
@@ -43,7 +42,6 @@ async function contadorProgresso(checkbox, porcentagemVideo, nomeModulo) {
 
 
 const titleModulo = document.getElementById('titulo-modulo').innerText.toLocaleLowerCase();
-console.log(titleModulo);
 firebase.auth().onAuthStateChanged(async function (user) {
     const uid = user.uid
 
